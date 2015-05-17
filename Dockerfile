@@ -9,3 +9,5 @@ RUN apk --update add --virtual build-dependencies build-base git \
 RUN npm install -g grunt-cli napa
 RUN grunt
 RUN sed -i '/hostname/s/localhost/0.0.0.0/' Gruntfile.coffee
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
