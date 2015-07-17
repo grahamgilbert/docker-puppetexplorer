@@ -1,6 +1,5 @@
 FROM alpine:3.1
-RUN apk add --update git
-RUN git clone https://github.com/spotify/puppetexplorer
+COPY puppetexplorer /puppetexplorer
 WORKDIR /puppetexplorer
 RUN apk add --update nodejs
 RUN apk --update add --virtual build-dependencies build-base git \
